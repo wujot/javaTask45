@@ -2,6 +2,8 @@ import java.util.Scanner;
 
 public class MathQuiz {
 
+    int correctAnswers = 0;
+
     Scanner question = new Scanner(System.in);
 
     public boolean question1() {
@@ -9,11 +11,7 @@ public class MathQuiz {
         System.out.println("3 * 5 is equal ?");
         int equal = question.nextInt();
 
-        if(answer == equal) {
-            return true;
-        }else {
-            return false;
-        }
+        return answer == equal;
     }
 
     public boolean question2() {
@@ -21,11 +19,7 @@ public class MathQuiz {
         System.out.println("What is the area of the square with side length equal 12 ?");
         int area = question.nextInt();
 
-        if(answer == area) {
-            return true;
-        }else {
-            return false;
-        }
+        return answer == area;
     }
 
     public boolean question3() {
@@ -33,30 +27,29 @@ public class MathQuiz {
         System.out.println("What is the square root of 15129 ?");
         int squareRoot = question.nextInt();
 
-        if(answer == squareRoot) {
-            return true;
-        }else {
-            return false;
-        }
+        return answer == squareRoot;
     }
 
     public void checkResult(boolean question1, boolean question2, boolean question3) {
-        if(question1 == true) {
+        if(question1) {
             System.out.println("Question 1: \nThe result is: 15\nIs correct answer\n");
+            correctAnswers += 1;
         }else {
             System.out.println("Question 1: \nThe result is: 15\nIs not correct answer\n");
         }
-        if(question2 == true) {
+        if(question2) {
             System.out.println("Question 2: \nThe result is: 144\nIs correct answer\n");
+            correctAnswers += 1;
         }else {
             System.out.println("Question 2: \nThe result is: 144\nIs not correct answer\n");
         }
-        if(question3 == true) {
+        if(question3) {
             System.out.println("Question 3: \nThe result is: 123\nIs correct answer\n");
+            correctAnswers += 1;
         }else {
             System.out.println("Question 3: \nThe result is: 123\nIs not correct answer\n");
         }
-
+    System.out.printf("Correct %d out of 3", correctAnswers);
     }
 
 
